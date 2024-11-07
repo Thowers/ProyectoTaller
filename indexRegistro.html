@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="myStyle.css" rel="stylesheet" type="text/css"/>
+    <title>Formulario Registro Usuarios Disquera</title>
+</head>
+<body class="body_registro">
+    <header class="header_registro">
+        <img class="logotipo_registro" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/hoperecords.png?raw=true" alt="logotipo de hope records">
+        <h1 class="titulo_registro">REGISTRO DE USUARIOS</h1>
+    </header>
+    <main class="main_registro">
+        <form action="miServlet" method="POST">
+            <div class="registro">
+                <div class="container_registro">
+                    <label for="nombre" class="text_registro">Nombre:</label>
+                    <input type="text" placeholder="Escribe aquí..." name="nombre" class="input_registro">
+                    <label for="apellido" class="text_registro">Apellido:</label>
+                    <input type="text" placeholder="Escribe aquí..." name="apellido" class="input_registro">
+                    <label for="usuario" class="text_registro">Usuario:</label>
+                    <input type="text" placeholder="Escribe aquí..." name="apellido" class="input_registro">
+                    <label for="correo" class="text_registro">Correo:</label>
+                    <input type="text" placeholder="Escribe aquí..." name="apellido" class="input_registro">
+                    <label for="contra" class="text_registro">Contraseña:</label>
+                    <input type="password" placeholder="Escribe aquí..." name="apellido" class="input_registro">
+                </div>
+                <div class="botones">
+                    <button type="submit" class="btnregistro_registro" name="Registro">REGISTRAR</button>
+                    <button type="button" class="btncancelar_registro">CANCELAR</button>
+                </div>
+            </div>   
+        </form>     
+    </main>
+    <footer class="footer">
+        <a class="link" href="https://github.com/Thowers/Guia2TP.git">
+            <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true" alt="logo de github">GitHub</a> 
+    </footer>
+</body>
+</html>
