@@ -115,6 +115,12 @@ main {
     color: #e0e0e0;
 }
 
+.card p {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+}
+
 /* Ajuste de las imágenes en la sección de Discos */
 .disco-image {
     width: 150px;
