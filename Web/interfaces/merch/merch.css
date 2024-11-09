@@ -154,6 +154,72 @@ body {
     transform: translateY(0);
 }
 
+/* Estilos generales para el carrito y el pop-up */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8820ff;
+    color: #fff;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.cart-button:hover {
+    transform: scale(1.1);
+}
+
+/* Pop-up del carrito */
+.cart-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-popup-content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: #fff;
+    text-align: center;
+}
+
+.cart-popup-content h3 {
+    margin-bottom: 20px;
+}
+
+.cart-popup-content .cart-total {
+    margin-top: 20px;
+}
+
+.cart-popup-content button {
+    background-color: #8820ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cart-popup-content button:hover {
+    background-color: #6b00cc;
+}
+
 /* Footer */
 footer {
     padding: 10px;

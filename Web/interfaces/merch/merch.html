@@ -25,54 +25,149 @@
         </div>
     </header>
 
-    <!-- Sección de Productos -->
+    <!-- Sección de Camisetas -->
     <section id="camisetas" class="section">
         <h2>Camisetas de Artistas</h2>
         <div class="content-grid">
             <div class="card">
                 <img src="../../assets/merch/camiseta1.png" alt="Camiseta 1" class="product-image">
-                <h1>"GANG" - Ryan Castro</h1>
-                <p class="price">$30.00</p>
+                <h1>"GANG"</h1>
+                <p class="price">$15.00</p>
                 <p>Camiseta oficial versión "GANG" - Ryan Castro</p>
-                <button class="add-to-cart">Añadir al carrito</button>
+                <button class="add-to-cart" onclick="addToCart('Camiseta GANG', 10.00)">Añadir al carrito</button>
             </div>
             <div class="card">
                 <img src="../../assets/merch/camiseta2.png" alt="Camiseta 2" class="product-image">
-                <h1>Paulo Londra - Hope Records</h1>
-                <p class="price">$30.00</p>
+                <h1>Paulo Londra</h1>
+                <p class="price">$15.00</p>
                 <p>Una camiseta moderna de Paulo Londra con el diseño exclusivo de Hope Records</p>
-                <button class="add-to-cart">Añadir al carrito</button>
+                <button class="add-to-cart" onclick="addToCart('Camiseta Paulo Londra', 15.00)">Añadir al carrito</button>
             </div>
             <div class="card">
                 <img src="../../assets/merch/camiseta3.png" alt="Camiseta 3" class="product-image">
-                <h1>"Ticketes" - Nicolai Fella</h1>
-                <p class="price">$30.00</p>
+                <h1>"Ticketes"</h1>
+                <p class="price">$15.00</p>
                 <p>Camiseta oficial versión "Ticketes" - Nicolai Fella</p>
-                <button class="add-to-cart">Añadir al carrito</button>
+                <button class="add-to-cart" onclick="addToCart('Camiseta Ticketes', 15.00)">Añadir al carrito</button>
             </div>
         </div>
     </section>
 
-    <!-- Otras secciones de Merchandising -->
+    <!-- Sección de Gorras -->
     <section id="gorras" class="section">
         <h2>Gorras Exclusivas</h2>
         <div class="content-grid">
             <div class="card">
                 <img src="../../assets/merch/gorra1.png" alt="Gorra 1" class="product-image">
-                <h4>Blessd x W Merch</h4>
+                <h1>Blessd x W Merch</h1>
                 <p class="price">$30.00</p>
                 <p>Una gorra moderna con el diseño exclusivo de W Merch</p>
-                <button class="add-to-cart">Añadir al carrito</button>
+                <button class="add-to-cart" onclick="addToCart('Gorra Blessd x W Merch', 30.00)">Añadir al carrito</button>
             </div>
             <div class="card">
                 <img src="../../assets/merch/gorra2.png" alt="Gorra 2" class="product-image">
-                <h4>Nitro Jam Tour - Feid</h4>
-                <p class="price">$15.00</p>
+                <h1>Nitro Jam Tour</h1>
+                <p class="price">$10.00</p>
                 <p>Gorra exclusiva del tour "Nitro Jam" - Ferxxo</p>
-                <button class="add-to-cart">Añadir al carrito</button>
+                <button class="add-to-cart" onclick="addToCart('Gorra Nitro Jam Tour', 10.00)">Añadir al carrito</button>
             </div>
         </div>
     </section>
+
+    <!-- Sección de Tazas -->
+    <section id="tazas" class="section">
+        <h2>Tazas de Artistas</h2>
+        <div class="content-grid">
+            <div class="card">
+                <img src="../../assets/merch/taza1.png" alt="Taza 1" class="product-image">
+                <h1>"Feliz Cumpleaños Ferxxo"</h1>
+                <p class="price">$10.00</p>
+                <p>Taza exclusiva de la canción "Feliz Cumpleaños Ferxxo"</p>
+                <button class="add-to-cart" onclick="addToCart('Taza Feliz Cumpleaños Ferxxo', 10.00)">Añadir al carrito</button>
+            </div>
+            <div class="card">
+                <img src="../../assets/merch/taza2.png" alt="Taza 2" class="product-image">
+                <h1>Paulo Londra</h1>
+                <p class="price">$10.00</p>
+                <p>Taza oficial del cantante Paulo Londra</p>
+                <button class="add-to-cart" onclick="addToCart('Taza Paulo Londra', 10.00)">Añadir al carrito</button>
+            </div>
+            <div class="card">
+                <img src="../../assets/merch/taza3.png" alt="Taza 3" class="product-image">
+                <h1>"It's a Nicola"</h1>
+                <p class="price">$10.00</p>
+                <p>Taza con diseño exclusivo de Nicolai Fella</p>
+                <button class="add-to-cart" onclick="addToCart('Taza Its a Nicola', 10.00)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Posters -->
+    <section id="poster" class="section">
+        <h2>Posters</h2>
+        <div class="content-grid">
+            <div class="card">
+                <img src="../../assets/merch/poster1.png" alt="Poster 1" class="product-image">
+                <h1>"El cantante del Ghetto"</h1>
+                <p class="price">$15.00</p>
+                <p>Poster exclusivo del Tour "El Cantante del Ghetto"</p>
+                <button class="add-to-cart" onclick="addToCart('Poster El cantante del Ghetto', 15.00)">Añadir al carrito</button>
+            </div>
+            <div class="card">
+                <img src="../../assets/merch/poster2.png" alt="Poster 2" class="product-image">
+                <h1>"1 OF 1"</h1>
+                <p class="price">$15.00</p>
+                <p>Poster exclusivo del Tour "1 OF 1"</p>
+                <button class="add-to-cart" onclick="addToCart('Poster El cantante del Ghetto', 15.00)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Accesorios -->
+    <section id="accesorios" class="section">
+        <h2>+ Accesorios</h2>
+        <div class="content-grid">
+            <div class="card">
+                <img src="../../assets/merch/accs1.png" alt="Accesorio 1" class="product-image">
+                <h1>"Claro que si"</h1>
+                <p class="price">$1000.00</p>
+                <p>Cadenas con temática de Blessd</p>
+                <button class="add-to-cart" onclick="addToCart('Cadenas Claro que si', 1000.00)">Añadir al carrito</button>
+            </div>
+            <div class="card">
+                <img src="../../assets/merch/accs2.png" alt="Accesorio 2" class="product-image">
+                <h1>"Ghetto Star"</h1>
+                <p class="price">$10.00</p>
+                <p>Cuaderno exclusivo versión "Ghetto Star"</p>
+                <button class="add-to-cart" onclick="addToCart('Cuaderno Ghetto Star', 10.00)">Añadir al carrito</button>
+            </div>
+            <div class="card">
+                <img src="../../assets/merch/accs3.webp" alt="Accesorio 3" class="product-image">
+                <h1>LightBar - Feid</h1>
+                <p class="price">$5.00</p>
+                <p>Linterna UV oficial del disco "Mor no le temas a la oscuridad" - Feid</p>
+                <button class="add-to-cart" onclick="addToCart('LightBar - Feid', 5.00)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón flotante del carrito -->
+<div id="cart-button" class="cart-button" onclick="toggleCartPopup()">
+    🛒
+</div>
+
+<!-- Pop-up del carrito -->
+<div id="cart-popup" class="cart-popup">
+    <div class="cart-popup-content">
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: <span id="cart-total">$0.00</span></p>
+        </div>
+        <button onclick="checkout()">Finalizar compra</button>
+        <button onclick="toggleCartPopup()">Cerrar</button>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer>
