@@ -1,0 +1,164 @@
+/* Estilo global y reinicio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y fuente general */
+body {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Sección de bienvenida (Hero Section) */
+.hero-section {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #333, #8820ff);
+    color: #e0e0e0;
+    transition: padding 0.3s, background-color 0.3s; /* Para el cambio gradual */
+    z-index: 1;
+}
+
+.hero-section.shrink {
+    padding: 30px 20px; /* Reducimos el padding al hacer scroll */
+    background-color: rgba(51, 51, 51, 0.9); /* Fondo semi-transparente */
+}
+
+/* Título y descripción de bienvenida */
+.hero-section h1 {
+    font-size: 3em;
+    transition: font-size 0.3s;
+}
+
+.hero-section.shrink h1 {
+    font-size: 2em; /* Reducimos el tamaño del título */
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section.shrink p {
+    font-size: 1.2em; /* Reducimos el tamaño de la descripción */
+}
+
+/* Logo dentro del header */
+.logo {
+    width: 700px; /* Tamaño inicial del logo */
+    transition: width 0.3s, opacity 0.3s; /* Transición suave para tamaño y opacidad */
+}
+
+.hero-section.shrink .logo {
+    width: 120px; /* Reducimos el tamaño del logo al hacer scroll */
+}
+
+.hero-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Secciones de navegación en hero-section */
+.hero-nav-buttons button {
+    appearance: none;
+    background-color: #1A1A1A;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5em 1.5em;
+    text-align: center;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.hero-nav-buttons button:hover {
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.hero-nav-buttons button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Sección de productos */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.content-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.card p.price {
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: greenyellow;
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+/* Botón de añadir al carrito */
+.add-to-cart {
+    appearance: none;
+    background-color: #8820ff;
+    border: 0.125em solid #8820ff;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5em 1.5em;
+    text-align: center;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.add-to-cart:hover {
+    background-color: #8820ff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.add-to-cart:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #ffffff;
+    margin-top: auto;
+}
