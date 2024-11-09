@@ -182,13 +182,3 @@ footer {
     color: #555;
     line-height: 1.5;
 }
-
-/* Botón de cierre del popup */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-}

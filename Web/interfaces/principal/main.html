@@ -11,98 +11,65 @@
 <body>
     <!-- Sección de Bienvenida -->
     <header class="hero-section">
-      <img src="../../assets/hoperecords.png" alt="logo" class="logo" />
-      <h1>¡Bienvenido a Hope Records!</h1>
-      <p>Descubre el mejor talento y música del momento</p>
+        <img src="../../assets/hoperecords.png" alt="logo" class="logo" />
+        <h1>¡Bienvenido a Hope Records!</h1>
+        <p>Descubre el mejor talento y música del momento</p>
 
-      <!-- Secciones de navegación en hero-section como botones -->
-      <div class="hero-nav-buttons">
-        <button onclick="location.href='#artistas'" class="artistas">
-          Artistas
-        </button>
-        <button onclick="location.href='#discos'">Discos</button>
-        <button onclick="location.href='#canciones'">Canciones</button>
-        <button onclick="location.href='#merch'">Merch</button>
-        <button onclick="location.href='#conciertos'">Conciertos</button>
-        <button onclick="location.href='#compras'">Compras</button>
-      </div>
+        <!-- Secciones de navegación en hero-section como botones -->
+        <div class="hero-nav-buttons">
+            <button onclick="location.href='#artistas'" class="artistas">
+                Artistas
+            </button>
+            <button onclick="location.href='#discos'">Discos</button>
+            <button onclick="location.href='#canciones'">Canciones</button>
+            <button onclick="location.href='#merch'">Merch</button>
+            <button onclick="location.href='#conciertos'">Conciertos</button>
+            <button onclick="location.href='#compras'">Compras</button>
+        </div>
     </header>
 
     <!-- Contenedor del Popup -->
     <div id="popup" class="popup" style="display: none">
-      <div class="popup-content">
-        <span class="close-button">&times;</span>
-        <img
-          id="popup-image"
-          src=""
-          alt="Imagen del Artista"
-          class="popup-image"
-        />
-        <h2 id="popup-title"></h2>
-        <p id="popup-text"></p>
-      </div>
+        <div class="popup-content">
+            <span class="close-button"></span>
+            <img id="popup-image" src="" alt="Imagen del Artista" class="popup-image" />
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
     </div>
 
     <!-- Sección de Artistas -->
     <section id="artistas" class="section">
-      <h2>Artistas Destacados</h2>
-      <div class="content-grid">
-        <div class="card">
-          <img
-            src="../../assets/artistas/Ryan.png"
-            alt="Ryan Castro"
-            class="disco-image"
-            data-title="Ryan Castro"
-            data-description="Descripción de Ryan Castro"
-            data-image="../../assets/artistas/Ryan.png"
-          />
-          <p>Ryan Castro</p>
+        <h2>Artistas Destacados</h2>
+        <div class="content-grid">
+            <div class="card">
+                <img src="../../assets/artistas/Ryan.png" alt="Ryan Castro" class="disco-image" data-title="Ryan Castro"
+                    data-description="Descripción de Ryan Castro" data-image="../../assets/artistas/Ryan.png" />
+                <p>Ryan Castro</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/artistas/blessd.png" alt="Blessd" class="disco-image" data-title="Blessd"
+                    data-description="Descripción de Blessd" data-image="../../assets/artistas/blessd.png" />
+                <p>Blessd</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/artistas/paulo.png" alt="Paulo Londra" class="disco-image"
+                    data-title="Paulo Londra" data-description="Descripción de Paulo Londra"
+                    data-image="../../assets/artistas/paulo.png" />
+                <p>Paulo Londra</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/artistas/feid.png" alt="Feid" class="disco-image" data-title="Feid"
+                    data-description="Descripción de Feid" data-image="../../assets/artistas/feid.png" />
+                <p>Feid</p>
+            </div>
+            <div class="card">
+                <img src="../../assets/artistas/nicollai.png" alt="Nicolai Fella" class="disco-image"
+                    data-title="Nicolai Fella" data-description="Descripción de Nicolai Fella"
+                    data-image="../../assets/artistas/nicollai.png" />
+                <p>Nicolai Fella</p>
+            </div>
         </div>
-        <div class="card">
-          <img
-            src="../../assets/artistas/blessd.png"
-            alt="Blessd"
-            class="disco-image"
-            data-title="Blessd"
-            data-description="Descripción de Blessd"
-            data-image="../../assets/artistas/blessd.png"
-          />
-          <p>Blessd</p>
-        </div>
-        <div class="card">
-          <img
-            src="../../assets/artistas/paulo.png"
-            alt="Paulo Londra"
-            class="disco-image"
-            data-title="Paulo Londra"
-            data-description="Descripción de Paulo Londra"
-            data-image="../../assets/artistas/paulo.png"
-          />
-          <p>Paulo Londra</p>
-        </div>
-        <div class="card">
-          <img
-            src="../../assets/artistas/feid.png"
-            alt="Feid"
-            class="disco-image"
-            data-title="Feid"
-            data-description="Descripción de Feid"
-            data-image="../../assets/artistas/feid.png"
-          />
-          <p>Feid</p>
-        </div>
-        <div class="card">
-          <img
-            src="../../assets/artistas/nicollai.png"
-            alt="Nicolai Fella"
-            class="disco-image"
-            data-title="Nicolai Fella"
-            data-description="Descripción de Nicolai Fella"
-            data-image="../../assets/artistas/nicollai.png"
-          />
-          <p>Nicolai Fella</p>
-        </div>
-      </div>
     </section>
 
     <!-- Sección de Albums -->
@@ -132,38 +99,22 @@
             </div>
         </div>
         <div class="card">
-          <img
-            src="../../assets/discos/si_sabe.png"
-            alt="Si sabe"
-            class="disco-image"
-          />
-          <p>Si sabe</p>
+            <img src="../../assets/discos/si_sabe.png" alt="Si sabe" class="disco-image" />
+            <p>Si sabe</p>
         </div>
         <div class="card">
-          <img
-            src="../../assets/discos/back.png"
-            alt="Back to the game"
-            class="disco-image"
-          />
-          <p>Back to the game</p>
+            <img src="../../assets/discos/back.png" alt="Back to the game" class="disco-image" />
+            <p>Back to the game</p>
         </div>
         <div class="card">
-          <img
-            src="../../assets/discos/feliz.png"
-            alt="Feliz cumpleanos ferxxo"
-            class="disco-image"
-          />
-          <p>Feliz cumpleanos ferxxo</p>
+            <img src="../../assets/discos/feliz.png" alt="Feliz cumpleanos ferxxo" class="disco-image" />
+            <p>Feliz cumpleanos ferxxo</p>
         </div>
         <div class="card">
-          <img
-            src="../../assets/discos/estado.png"
-            alt="Estado popular del alma - EPA"
-            class="disco-image"
-          />
-          <p>Estado popular del alma - EPA</p>
+            <img src="../../assets/discos/estado.png" alt="Estado popular del alma - EPA" class="disco-image" />
+            <p>Estado popular del alma - EPA</p>
         </div>
-      </div>
+        </div>
     </section>
 
     <!-- Sección de Videos -->
@@ -186,36 +137,32 @@
             </div>
         </div>
         <div class="card">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/dmW68lzaaqs?si=fZbXC7ZBeWgBfvJe"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-          <p>Plan A</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dmW68lzaaqs?si=fZbXC7ZBeWgBfvJe"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <p>Plan A</p>
         </div>
-      </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; Hope Records 2024. Todos los derechos reservados.</p>
+        <p>&copy; Hope Records 2024. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Script para funciones adicionales -->
-<<<<<<< HEAD
-    <script src="main.js"></script>
-  </body>
-</html>
-=======
-    <script src="script.js"></script>
+    <<<<<<< HEAD <script src="main.js">
+        </script>
 </body>
-<<<<<<< HEAD
 
 </html>
->>>>>>> ab3840c390dc7cb9ed3eecb974b45c434eca6fc1
 =======
-</html>
->>>>>>> 417589886e8f1fc0e5778fa55314b820138f9d59
+<script src="script.js"></script>
+</body>
+<<<<<<< HEAD </html>
+    >>>>>>> ab3840c390dc7cb9ed3eecb974b45c434eca6fc1
+    =======
+
+    </html>
+    >>>>>>> 417589886e8f1fc0e5778fa55314b820138f9d59
