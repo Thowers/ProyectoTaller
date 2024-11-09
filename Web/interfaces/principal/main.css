@@ -10,8 +10,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: "Segoe UI",Helvetica,Arial,sans-serif,
-        "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: #1a1a1a;
     color: #e0e0e0;
 }
@@ -44,24 +44,55 @@ main {
     margin-bottom: 20px;
 }
 
-/* Secciones de navegación en hero-section */
-.hero-nav-links {
-    list-style: none;
+.hero-nav-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     margin-top: 10px;
 }
 
-.hero-nav-links a {
+/* Secciones de navegación en hero-section */
+.hero-nav-buttons button {
+    appearance: none;
+    background-color: #1A1A1A;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
     color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 1em;
+    min-width: 0;
+    outline: none;
+    padding: 0.5em 1.5em;
+    text-align: center;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
 }
 
-.hero-nav-links a:hover {
-    color: #000000;
+.hero-nav-buttons button:disabled {
+    pointer-events: none;
+}
+
+.hero-nav-buttons button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.hero-nav-buttons button:active {
+    box-shadow: none;
+    transform: translateY(0);
 }
 
 /* Estilo de las secciones de contenido */
