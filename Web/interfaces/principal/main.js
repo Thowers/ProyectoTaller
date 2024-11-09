@@ -34,3 +34,13 @@ window.addEventListener("click", event => {
         popup.style.display = "none";
     }
 });
+
+// Añadir evento de clic a cada imagen de álbum
+document.querySelectorAll(".album-image").forEach(image => {
+    image.addEventListener("click", () => {
+        const url = image.getAttribute("data-url");
+        if (url) {
+            window.open(url, "_blank"); // Abre el enlace en una nueva pestaña
+        }
+    });
+});
