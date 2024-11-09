@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conciertos Hope Records</title>
+    <link rel="stylesheet" href="conciertos.css">
+</head>
+<body>
+
+    <!-- Sección de Bienvenida -->
+    <header class="header">
+        <img src="../../assets/hoperecords.png" alt="logo" class="logo" />
+        <h1>¡Últimos Conciertos!</h1>
+        <p>Compra las entradas a los últimos conciertos del año de los Artistas</p>
+    </header>
+
+    <!-- Contenedor de Conciertos -->
+    <div class="conciertos-container">
+        <div class="concierto-banner" onclick="mostrarPopup('Ryan Castro x Blessd', 'USA', '(A elección)', 'https://www.ticketmaster.com/ryan-castro-tickets/artist/2872202')">
+            <img src="../../assets/conciertos/banner2.webp" alt="Ryan Castro">
+            <h3>Ay Bendito Ghetto Tour</h3>
+        </div>
+        <div class="concierto-banner" onclick="mostrarPopup('Feid', 'Colombia', '01-12-2024', 'https://www.taquillalive.com/performance-details/?artist=feid&event=TCL.EVN466.PRF2')">
+            <img src="../../assets/conciertos/banner1.webp" alt="Feid">
+            <h3>FerxxoCalipsis</h3>
+        </div>
+        <div class="concierto-banner" onclick="mostrarPopup('Paulo Londra', 'México', '23-11-2024', 'https://www.cocacolaflowfest.com.mx/boletos')">
+            <img src="../../assets/conciertos/banner4.webp" alt="Paulo Londra">
+            <h3>Coca Cola FlowFest</h3>
+        </div>
+        <div class="concierto-banner" onclick="mostrarPopup('Nicolai Fella', 'Colombia', '13-12-2024', 'https://allticketscol.com/eventos/evento/309')">
+            <img src="../../assets/conciertos/banner3.webp" alt="Nicolai Fella">
+            <h3>Estado popular del Alma</h3>
+        </div>
+    </div>
+
+    <!-- Popup de Información del Concierto -->
+    <div id="popup-overlay" class="popup-overlay" onclick="cerrarPopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <h3 id="popup-title"></h3>
+            <p id="popup-date"></p>
+            <p id="popup-location"></p>
+            <button id="popup-button">Comprar Boletas</button>
+            <button onclick="cerrarPopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="conciertos.js"></script>
+</body>
+</html>
