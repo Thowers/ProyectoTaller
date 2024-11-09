@@ -113,6 +113,12 @@ main {
     padding: 20px;
     border-radius: 10px;
     color: #e0e0e0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card p {
