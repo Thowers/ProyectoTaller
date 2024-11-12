@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Records</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+
+<body>
+    <form class="my-form" id="registroForm">
+        <div class="login-welcome-row">
+            <a href="#" title="Logo">
+                <img src="../../assets/hoperecords.png" alt="Logo" class="logo">
+            </a>
+            <h1>¡Regístrate en Hope Records!</h1>
+        </div>
+
+        <div class="social-row">
+            <a href="#" title="Use Google">
+                <img src="../../assets/google.png" alt="Google">
+                Registrarse con Google
+            </a>
+        </div>
+
+        <div class="lines">
+            <div class="line"></div>
+            Ó
+            <div class="line"></div>
+        </div>
+
+        <div class="text-field">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" autocomplete="off" placeholder="Pepe Pérez" required>
+
+            <label for="user">Usuario</label>
+            <input type="text" id="user" name="user" autocomplete="off" placeholder="Pepitx" required>
+
+            <label for="country">Selecciona tu país:</label>
+            <select id="country" name="country"></select>
+
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" autocomplete="off" placeholder="you@example.com" required>
+
+            <div class="error-message">Correo en formato incorrecto</div>
+        </div>
+
+        <div class="password-field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" autocomplete="off" placeholder="*************"
+                required>
+            <div class="error-message">Contraseña en formato incorrecto</div>
+        </div>
+
+        <button type="submit" class="my-form_button">
+            Registrarse
+        </button>
+    </form>
+    <!--Llama a la API de REST Countries para obtener la lista de países -->
+    <script src="../registro/registro.js"></script>
+</body>
+
+</html>
