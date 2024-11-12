@@ -13,22 +13,19 @@
   </header>
   <main class="main_registro_artista">
     <div class="container_registro_artista">
-  <label for="artistas" class="text_registro_artista">Selecciona un artista:</label>
-  <select id="artistas" name="artistas" class="input_registro_artista" onchange="cargarDetalles()">
-    <option value="" disabled selected>Selecciona un artista</option>
-  </select>
+      <label for="artistas" class="text_registro_artista">Selecciona un artista:</label>
+      <select id="artistas" name="artistas" class="input_registro_artista" onchange="cargarDetalles()">
+        <option value="" disabled selected>Selecciona un artista</option>
+      </select>
 
-  <div id="detalles-artista" style="display: none;">
-      <h2 class="titulo_detalles_artista">Detalles del Artista</h2>
-      <form id="artistas_editar">
-        
+      <div id="detalles-artista" style="display: none;">
+        <h2 class="titulo_detalles_artista">Detalles del Artista</h2>
+        <form id="artistas_editar">
           <label for="nombre_banda" class="text_registro_artista">Nombre de la banda:</label>
           <input type="text" id="nombre_banda" placeholder="Escribe aquí..." name="nombre_banda" class="input_registro_artista">
-        
 
           <label for="debut" class="text_registro_artista">Fecha del debut:</label>
-          <input type="date" id="debut" placeholder="Escribe aquí..." name="debut" class="input_registro_artista">
-        
+          <input type="date" id="debut" name="debut" class="input_registro_artista">
 
           <label for="contrato" class="text_registro_artista">Estado del contrato:</label>
           <select id="contrato" name="contrato" class="input_registro_artista">                    
@@ -62,23 +59,23 @@
 
           <label for="pais" class="text_registro_artista">País:</label>
           <input type="text" id="pais" placeholder="Escribe el país" name="pais" class="input_registro_artista">
-        
+
           <label for="descripcion" class="text_registro_artista">Descripción:</label>
           <textarea id="descripcion" name="descripcion" placeholder="Escribe una descripción" class="input_registro_artista"></textarea>
-        </div>           
-    </form>
-    <div class="botones_edicion" >
-      <button type="button" form="artistas_editar" class="btnguardar_artista" onclick="editarArtista()">Guardar Cambios</button>
-      <button type="button" class="btneliminar_artista" onclick="eliminarArtista()">Eliminar Artista</button>
-      <button type="button" class="btn_volver" onclick="location.href='./indexCArtistas.html'">VOLVER</button>
+        </form>           
+        <div class="botones_edicion">
+          <button type="button" class="btnguardar_artista" onclick="editarArtista()">Guardar Cambios</button>
+          <button type="button" class="btneliminar_artista" onclick="eliminarArtista()">Eliminar Artista</button>
+          <button type="button" class="btn_volver" onclick="location.href='./indexCArtistas.html'">VOLVER</button>
+        </div>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
   <footer class="footer">
     <a class="link" href="https://github.com/Thowers/Guia2TP.git">
         <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true" alt="logo de github">GitHub
     </a>
   </footer>
-  <script src="editar.js"></script>
+  <script src="../artistas/editar.js"></script>
 </body>
 </html>
