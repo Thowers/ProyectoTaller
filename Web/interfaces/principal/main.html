@@ -19,8 +19,10 @@
         <div class="hero-nav-buttons">
             <button onclick="location.href='../../interfaces/merch/merch.html'">Merch</button>
             <button onclick="location.href='../../interfaces/conciertos/conciertos.html'">Conciertos</button>
-            <button onclick="location.href='../../interfaces/artistas/indexCArtistas.html'">Creacion artistas</button>
         </div>
+
+        <!-- Botón de Volver -->
+        <button class="back-button" onclick="goBack()">⬅ Volver</button>
     </header>
 
     <!-- Contenedor del Popup -->
@@ -79,7 +81,8 @@
         <div class="content-grid">
             <div class="card">
                 <img src="../../assets/discos/El_Cantante_del_Ghetto.png" alt="El cantante del ghetto"
-                    class="album-image" data-url="https://www.youtube.com/playlist?list=OLAK5uy_lFVHHc9QBW8eQM7Hdo0gM7N6bamY855Lo">
+                    class="album-image"
+                    data-url="https://www.youtube.com/playlist?list=OLAK5uy_lFVHHc9QBW8eQM7Hdo0gM7N6bamY855Lo">
                 <p>El cantante del ghetto</p>
             </div>
             <div class="card">
@@ -125,6 +128,25 @@
             </div>
         </div>
     </section>
+
+    <!-- Botón de Chat Flotante -->
+    <button class="chat-button" onclick="toggleChat()">🧑‍💻<br>Ayuda</button>
+
+    <!-- Modal de Chat -->
+    <div class="chat-modal" id="chatModal">
+        <div class="chat-header">
+            <h2>Chat de Soporte</h2>
+            <button class="close-btn" onclick="toggleChat()">✖</button>
+        </div>
+        <div class="chat-content">
+            <p>¡Hola! ¿En qué podemos ayudarte?</p>
+            <!-- Aquí podrías integrar un formulario o API de chat -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Escribe tu mensaje...">
+            <button>Enviar</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>

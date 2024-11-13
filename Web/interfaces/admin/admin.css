@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+/* Sección de bienvenida*/
+.header {
+    text-align: center;
+    padding: 20px 20px;
+    background: linear-gradient(to right, #333, #8820ff);
+    color: #e0e0e0;
+}
+
+/* Título y descripción de bienvenida */
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.secciones-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.seccion-banner {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.seccion-banner img {
+    width: 100%;
+    height: 450px;
+    object-fit: fill;
+}
+
+.seccion-banner h3 {
+    padding: 10px;
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.seccion-banner:hover {
+    transform: scale(1.05);
+}
