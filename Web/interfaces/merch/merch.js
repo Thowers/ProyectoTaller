@@ -53,3 +53,14 @@ function checkout() {
     updateCartPopup(); // Actualizar el pop-up para reflejar que el carrito está vacío
     toggleCartPopup(); // Cerrar el pop-up
 }
+
+// Función para volver entre interfaces
+function goBack() {
+    window.history.back();
+}
+
+// Chat de soporte
+function toggleChat() {
+    const chatModal = document.getElementById('chatModal');
+    chatModal.style.display = chatModal.style.display === 'block' ? 'none' : 'block';
+}

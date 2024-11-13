@@ -11,3 +11,9 @@ function mostrarPopup(artista, lugar, fecha,buyLink) {
 function cerrarPopup() {
     document.getElementById("popup-overlay").style.display = "none";
 }
+
+// Chat de soporte
+function toggleChat() {
+    const chatModal = document.getElementById('chatModal');
+    chatModal.style.display = chatModal.style.display === 'block' ? 'none' : 'block';
+}

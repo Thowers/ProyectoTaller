@@ -17,7 +17,6 @@
         <div class="hero-nav-buttons">
             <button onclick="location.href='../../interfaces/merch/merch.html'">Merch</button>
             <button onclick="location.href='../../interfaces/principal/main.html'">Principal</button>
-            <button onclick="location.href='../../interfaces/artistas/indexCArtistas.html'">Creacion artistas</button>
         </div>
     </header>
 
@@ -51,6 +50,30 @@
             <button onclick="cerrarPopup()">Cerrar</button>
         </div>
     </div>
+
+    <!-- Botón de Chat Flotante -->
+    <button class="chat-button" onclick="toggleChat()">🧑‍💻<br>Ayuda</button>
+
+    <!-- Modal de Chat -->
+    <div class="chat-modal" id="chatModal">
+        <div class="chat-header">
+            <h2>Chat de Soporte</h2>
+            <button class="close-btn" onclick="toggleChat()">✖</button>
+        </div>
+        <div class="chat-content">
+            <p>¡Hola! ¿En qué podemos ayudarte?</p>
+            <!-- Aquí podrías integrar un formulario o API de chat -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Escribe tu mensaje...">
+            <button>Enviar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Hope Records 2024. Todos los derechos reservados.</p>
+    </footer>
 
     <script src="conciertos.js"></script>
 </body>

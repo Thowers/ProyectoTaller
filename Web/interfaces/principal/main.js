@@ -50,8 +50,3 @@ function toggleChat() {
     const chatModal = document.getElementById('chatModal');
     chatModal.style.display = chatModal.style.display === 'block' ? 'none' : 'block';
 }
-
-// Función para volver entre interfaces
-function goBack() {
-    window.history.back();
-}

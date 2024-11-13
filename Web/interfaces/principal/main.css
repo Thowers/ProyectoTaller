@@ -20,7 +20,7 @@ main {
     flex: 1;
 }
 
-/* Secciones de navegación en hero-section */
+/* Botón volver */
 .back-button {
     position: fixed;
     top: 20px;
