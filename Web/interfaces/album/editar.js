@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("El elemento 'artistas' no se encuentra.");
   }
 });
+
 function cargarAlbums() {
   const artistId = document.getElementById('artistas').value;
 
@@ -66,6 +67,7 @@ function cargarAlbums() {
       console.error('Error al cargar álbumes:', error);
     });
 }
+
 // Cargar detalles del album seleccionado
 function cargarDetallesAlbum() {
   const albumId = document.getElementById('albums').value;
@@ -101,7 +103,6 @@ document.getElementById('albums').addEventListener('change', function() {
   console.log('Cambio de selección en el álbum');
   cargarDetallesAlbum();  // Llama a la función para cargar los detalles del álbum
 });
-
 
 // Editar álbum
 function editarAlbum() {
@@ -156,9 +157,9 @@ function editarAlbum() {
 
 // Eliminar album
 function eliminarAlbum() {
-  const id = document.getElementById('artistas').value;
+  const albumId = document.getElementById('albums').value;
 
-  fetch(`${apiUrl}/artistas/${id}`, {
+  fetch(`${apiUrl}/albums/${albumId}`, {
     method: 'DELETE'
   })
     .then(response => response.json())

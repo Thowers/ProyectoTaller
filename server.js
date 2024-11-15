@@ -3,8 +3,6 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const bcrypt = require('bcryptjs'); // Para encriptar las contraseñas
-const saltRounds = 10; // Define la cantidad de saltos para la encriptación
 
 const app = express();
 app.use(cors());
@@ -215,6 +213,27 @@ app.put('/artistas/:artistId/artistas_album/:albumId', (req, res) => {
       return res.status(500).send('Error al actualizar el álbum');
     }
     res.json({ message: 'Álbum actualizado correctamente' });
+  });
+});
+
+// Codigo para eliminar un album
+app.delete('/albums/:albumId', (req, res) => {
+  const albumId = req.params.albumId;
+  console.log('ID del álbum a eliminar:', albumId);
+
+  const query = 'DELETE FROM albums WHERE id = ?';
+
+  db.query(query, [albumId], (error, results) => {
+    if (error) {
+      console.error('Error en la consulta SQL:', error);
+      res.status(500).json({ message: 'Error interno del servidor' });
+    } else if (results.affectedRows === 0) {
+      console.log('Álbum no encontrado:', albumId);
+      res.status(404).json({ message: 'Álbum no encontrado' });
+    } else {
+      console.log('Álbum eliminado:', albumId);
+      res.json({ message: 'Álbum eliminado correctamente' });
+    }
   });
 });
 
