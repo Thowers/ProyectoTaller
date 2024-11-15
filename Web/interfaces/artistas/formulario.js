@@ -6,7 +6,7 @@ document.getElementById('artistasregistro').addEventListener('submit', function(
     const data = Object.fromEntries(formData.entries());
   
     // Realiza la solicitud POST
-    fetch('http://localhost:3000/data', { // Asegúrate de usar el puerto correcto aquí
+    fetch('http://localhost:3000/data_artista', { // Asegúrate de usar el puerto correcto aquí
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./mystyle.css">
+  <title>Editar/Eliminar Albums</title>
+</head>
+
+<body>
+  <header class="header_registro_artista">
+    <img class="logotipo_registro_artista"
+      src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/hoperecords.png?raw=true"
+      alt="logotipo de hope records">
+    <h1 class="titulo_registro_artista">EDICION DE ALBUMS</h1>
+  </header>
+  <main class="main_registro_artista">
+    <div class="container_registro_artista">
+      <label for="artistas" class="text_registro_artista">Selecciona un artista:</label>
+      <select id="artistas" name="artistas" class="input_registro_artista">
+        <option value="" disabled selected>Selecciona un artista</option>
+      </select>
+      <label for="albums" class="text_registro_artista">Selecciona un álbum:</label>
+      <select id="albums" name="albums" class="input_registro_artista" onchange="cargarDetallesAlbum()">
+        <option>Selecciona un álbum</option>
+      </select>
+
+      <div id="detalles-artista" style="display: none;">
+        <h2 class="titulo_detalles_artista">Detalles del Álbum</h2>
+        <form id="artistas_editar">
+          <label for="nombre" class="text_registro_artista">Nombre</label>
+          <input type="text" id="nombre" placeholder="Escribe aquí..." name="nombre" class="input_registro_artista">
+      
+          <label for="salida" class="text_registro_artista">Fecha de Salida:</label>
+          <input type="date" id="salida" placeholder="Escribe aquí..." name="salida" class="input_registro_artista">
+      
+          <label for="tracklist" class="text_registro_artista">TrackList:</label>
+          <textarea id="descripcion" name="tracklist" placeholder="Escribe una descripción" class="input_registro_artista"></textarea>
+        </form>
+        <div class="botones_edicion">
+          <button type="button" class="btnguardar_artista" onclick="editarAlbum()">Guardar Cambios</button>
+          <button type="button" class="btneliminar_artista" onclick="eliminarAlbum()">Eliminar Artista</button>
+          <button type="button" class="btn_volver" onclick="location.href='./indexCAlbum.html'">VOLVER</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <a class="link" href="https://github.com/Thowers/Guia2TP.git">
+      <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
+        alt="logo de github">GitHub
+    </a>
+  </footer>
+  <script>const select = document.getElementById('albums');
+select.innerHTML = '<option value="" disabled selected>Selecciona un álbum</option>';</script>
+  <script src="../album/editar.js"></script>
+</body>
+</html>

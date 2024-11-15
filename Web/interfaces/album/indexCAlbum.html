@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mystyle.css">
+    <title>Registro de Album</title>
+</head>
+
+<body class="body_registro_artista">
+    <header class="header_registro_artista">
+        <img class="logotipo_registro_artista"
+            src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/hoperecords.png?raw=true"
+            alt="logotipo de hope records">
+        <h1 class="titulo_registro_artista">REGISTRO DE ALBUM</h1>
+    </header>
+    <main class="main_registro_artista">
+        <div class="vacio_izquierda"></div>
+        <div class="registro_artista">
+            <form id="artistasregistro">
+                <div class="container_registro_artista">
+                    <label for="artistas" class="text_registro_artista">Selecciona un artista:</label>
+                    <select id="artistas" name="id_artista" class="input_registro_artista">
+                        <option value="" disabled selected>Selecciona un artista</option>
+                    </select>
+
+                    <label for="nombre" class="text_registro_artista">Nombre</label>
+                    <input type="text" id="debut" placeholder="Escribe aquí..." name="nombre"
+                        class="input_registro_artista">
+
+                    <label for="salida" class="text_registro_artista">Fecha de Salida:</label>
+                    <input type="date" id="debut" placeholder="Escribe aquí..." name="salida"
+                        class="input_registro_artista">
+
+                    <label for="tracklist" class="text_registro_artista">TrackList:</label>
+                    <textarea id="descripcion" name="tracklist" placeholder="Escribe una descripción"
+                        class="input_registro_artista"></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="botones_artistas">
+            <button type="submit" form="artistasregistro" class="btnregistro_artista">REGISTRAR</button>
+            <button type="button" class="btnregistro_artista_consultar"
+                onclick="location.href='./indexRUDAlbum.html'">CONSULTAR</button>
+            <button type="button" class="btnregistro_artista_consultar"
+                onclick="location.href='../admin/admin.html'">VOLVER</button>
+        </div>
+        <div class="vacio_derecha"></div>
+    </main>
+    <footer class="footer">
+        <a href="https://github.com/Thowers/Guia2TP.git">
+            <img class="github" src="https://github.com/Thowers/Guia2TP/blob/main/IMAGENES/github.png?raw=true"
+                alt="logo de github">GitHub
+        </a>
+    </footer>
+    <script src="../album/formulario.js"></script>
+    <script src="../album/editar.js"></script>
+</body>
+
+</html>

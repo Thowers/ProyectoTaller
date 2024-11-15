@@ -74,8 +74,8 @@ app.post('/login', (req, res) => {
   });
 });
 
-// Codigo para manejar el envío de datos
-app.post('/data', (req, res) => {
+// Codigo para manejar el envío de artistas
+app.post('/data_artista', (req, res) => {
   const { nombre_banda, debut, contrato, genero, estado, pais, descripcion } = req.body;
   const query = 'INSERT INTO artista (nombre_banda, debut, contrato, genero, estado, pais, descripcion) VALUES (?, ?, ?, ?, ?, ?, ?)';
   db.query(query, [nombre_banda, debut, contrato, genero, estado, pais, descripcion], (err, results) => {
@@ -115,7 +115,7 @@ app.get('/artistas/:id', (req, res) => {
   });
 });
 
-// Codigo para actualizar un artista
+// Codigo para actualizar un album
 app.put('/artistas/:id', (req, res) => {
   const { id } = req.params;
   const { nombre_banda, debut, contrato, genero, estado, pais, descripcion } = req.body;
@@ -141,6 +141,80 @@ app.delete('/artistas/:id', (req, res) => {
       return res.status(500).send('Error al eliminar el artista');
     }
     res.json({ message: 'Artista eliminado correctamente' });
+  });
+});
+
+// Codigo para manejar el envío de album
+app.post('/data_album', (req, res) => {
+  console.log('Datos recibidos en el servidor:', req.body);
+
+  const { id_artista, nombre, salida, tracklist } = req.body;
+
+  if (!id_artista || !nombre || !salida || !tracklist) {
+      return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+  }
+
+  const query = 'INSERT INTO artista_album (id_artista, nombre, salida, tracklist) VALUES (?, ?, ?, ?)';
+  db.query(query, [id_artista, nombre, salida, tracklist], (err, results) => {
+      if (err) {
+          console.error('Error en la consulta:', err.message);
+          res.status(500).json({ error: 'Error al guardar los datos' });
+      } else {
+          res.status(200).json({ message: 'Datos guardados correctamente' });
+      }
+  });
+});
+
+// Obtener los álbumes de un artista
+app.get('/artistas/:id/artistas_album', (req, res) => {
+  const artistId = req.params.id;
+  console.log('Solicitando álbumes para el artista con ID:', artistId);  // Verifica que el ID sea correcto
+
+  const query = 'SELECT id_artista_album, nombre FROM artista_album WHERE id_artista = ?';  // Usamos el nombre correcto del campo
+
+  db.query(query, [artistId], (err, results) => {
+    if (err) {
+      console.error('Error al obtener los álbumes:', err);
+      res.status(500).json({ error: 'Error al obtener los álbumes' });
+    } else {
+      console.log('Álbumes obtenidos desde la base de datos:', results);  // Verifica que los datos estén llegando bien
+      res.status(200).json(results);  // Devuelve los álbumes encontrados
+    }
+  });
+});
+
+// Obtener detalles del álbum
+app.get('/albums/:id', (req, res) => {
+  const albumId = req.params.id;
+  console.log('ID del álbum:', albumId);  // Verifica el ID que estás recibiendo
+
+  const query = 'SELECT * FROM artista_album WHERE id_artista_album = ?';
+  
+  db.query(query, [albumId], (err, results) => {
+    if (err) {
+      console.error('Error en la consulta:', err);  // Más detalles sobre el error
+      res.status(500).json({ error: 'Error al obtener los detalles del álbum' });
+    } else {
+      console.log('Detalles del álbum:', results);  // Verifica los resultados de la consulta
+      res.status(200).json(results[0]);
+    }
+  });
+});
+
+//editar detalles album
+app.put('/artistas/:artistId/artistas_album/:albumId', (req, res) => {
+  const artistId = req.params.artistId;
+  const albumId = req.params.albumId;
+  const { nombre, salida, tracklist } = req.body;
+
+  const query = `UPDATE artista_album SET nombre = ?, salida = ?, tracklist = ? WHERE ID_Album = ?`;
+
+  db.query(query, [nombre, salida, tracklist, id], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error al actualizar el álbum');
+    }
+    res.json({ message: 'Álbum actualizado correctamente' });
   });
 });
 
