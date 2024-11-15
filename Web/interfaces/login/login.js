@@ -16,7 +16,7 @@ document.querySelector('.my-form').addEventListener('submit', function(e) {
     .then(data => {
       if (data.success) {
         // Redirigir a la página principal si el inicio de sesión es exitoso
-        window.location.href = '/ProyectoTaller/Web/interfaces/principal/main.html';
+        window.location.href = '/Web/interfaces/principal/main.html';
       } else {
         // Mostrar un mensaje de error si el inicio de sesión falla
         alert(data.message); // Mostramos el mensaje de error
