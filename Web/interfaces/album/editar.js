@@ -106,52 +106,24 @@ document.getElementById('albums').addEventListener('change', function() {
 
 // Editar álbum
 function editarAlbum() {
-  const albumId = document.getElementById('albums').value;  // Obtener el id del álbum
-  const nombreInput = document.getElementById('nombre');
-  const salidaInput = document.getElementById('salida');
-  const tracklistInput = document.getElementById('descripcion');
-
-  // Validación: verificar que todos los campos estén llenos
-  if (!nombreInput.value || !salidaInput.value || !tracklistInput.value || !albumId) {
-    alert("Por favor, completa todos los campos del álbum.");
-    return;
-  }
-
-  // Preparar los datos a enviar
+  const albumId = document.getElementById('albums').value; 
   const datos = {
-    nombre: nombreInput.value,        // Nombre del álbum
-    salida: salidaInput.value,        // Fecha de salida
-    tracklist: tracklistInput.value   // Tracklist del álbum
+    nombre: document.getElementById('nombre').value,        // Nombre del álbum
+    salida: document.getElementById('salida').value,        // Fecha de salida
+    tracklist: document.getElementById('descripcion').value   // Tracklist del álbum
   };
-
-  // Obtener el id del artista (si es necesario)
-  const artistId = document.getElementById('artistas').value;
-
-  // Verificar si se seleccionó un artista
-  if (!artistId) {
-    alert("Por favor, selecciona un artista.");
-    return;
-  }
-
   // Hacer la solicitud PUT para actualizar el álbum
-  fetch(`${apiUrl}/artistas/${artistId}/artistas_album/${albumId}`, {
+  fetch(`${apiUrl}/albums/${albumId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(datos)
   })
-    .then(response => {
-      console.log(response);
-      return response.json(); // Intentar procesar la respuesta como JSON
-    })
+    .then(response => response.json())
     .then(data => {
-      alert(data.message); // Mensaje de éxito
-      location.reload();  // Recargar la página para ver los cambios
-    })
-    .catch(error => {
-      console.error('Error al editar el álbum:', error);
-      alert('Hubo un error al editar el álbum');
+      alert(data.message);
+      location.reload();
     });
 }
 

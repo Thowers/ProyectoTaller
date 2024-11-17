@@ -113,7 +113,7 @@ app.get('/artistas/:id', (req, res) => {
   });
 });
 
-// Codigo para actualizar un album
+// Codigo para actualizar un artista
 app.put('/artistas/:id', (req, res) => {
   const { id } = req.params;
   const { nombre_banda, debut, contrato, genero, estado, pais, descripcion } = req.body;
@@ -200,14 +200,12 @@ app.get('/albums/:id', (req, res) => {
 });
 
 //editar detalles album
-app.put('/artistas/:artistId/artistas_album/:albumId', (req, res) => {
-  const artistId = req.params.artistId;
+app.put('/albums/:albumId', (req, res) => {
   const albumId = req.params.albumId;
   const { nombre, salida, tracklist } = req.body;
+  const query = `UPDATE artista_album SET nombre = ?, salida = ?, tracklist = ? WHERE id_artista_album = ?`;
 
-  const query = `UPDATE artista_album SET nombre = ?, salida = ?, tracklist = ? WHERE ID_Album = ?`;
-
-  db.query(query, [nombre, salida, tracklist, id], (err, results) => {
+  db.query(query, [nombre, salida, tracklist, albumId], (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Error al actualizar el álbum');
@@ -221,7 +219,7 @@ app.delete('/albums/:albumId', (req, res) => {
   const albumId = req.params.albumId;
   console.log('ID del álbum a eliminar:', albumId);
 
-  const query = 'DELETE FROM albums WHERE id = ?';
+  const query = 'DELETE FROM artista_album WHERE id_artista_album = ?';
 
   db.query(query, [albumId], (error, results) => {
     if (error) {
