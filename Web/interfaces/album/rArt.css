@@ -1,0 +1,216 @@
+:root {
+    --primario: #6c3cdc;
+    --primario-transparencia: #673cdc20;
+    --primario-luz: #8627d3;
+    --morado: #7700ff;
+    --morado-oscuro: #37008f;
+    --secundario: #f87c7c;
+    --texto: #fff;
+    --texto-gris: #d7d7d7;
+    --blanco: #FFFFFF;
+    --bg: #101010;
+    --link-bg: #171717;
+    --link-borde: #202020;
+    --borde: #F4F4F6;
+    --error: #FF4D4D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--primario);
+    color: var(--texto);
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanco);
+    background: var(--bg);
+}
+
+/*CSS del bienvenida y logo*/
+.login-welcome-row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.welcome-message {
+    max-width: 24rem;
+}
+
+.logo {
+    height: 3.5rem;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--primario);
+}
+
+/*CSS de los inputs*/
+.text-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.text-field input {
+    color: var(--texto);
+    max-width: 100%;
+    width: 100%;
+    border: 1.5px solid var(--borde);
+    min-height: 3rem;
+    letter-spacing: .03rem;
+    outline: none;
+    background: var(--input-bg);
+    transition: .25s;
+    border-radius: 0.75rem;
+    text-indent: 1.25rem;
+}
+
+.text-field textarea {
+    color: var(--texto);
+    max-width: 100%;
+    width: 100%;
+    border: 1.5px solid var(--borde);
+    min-height: 3rem;
+    letter-spacing: .03rem;
+    outline: none;
+    background: var(--input-bg);
+    transition: .25s;
+    border-radius: 0.75rem;
+    text-indent: 1rem;
+}
+
+.text-field select {
+    color: var(--texto);
+    max-width: 100%;
+    width: 100%;
+    border: 1.5px solid var(--borde);
+    min-height: 3rem;
+    letter-spacing: .03rem;
+    outline: none;
+    background: var(--input-bg);
+    transition: .25s;
+    border-radius: 0.75rem;
+    text-indent: 1.25rem;
+}
+
+.text-field label {
+    color: var(--texto);
+}
+
+.text-field input:focus {
+    border: 1.5px solid var(--primario);
+}
+
+.text-field textarea:focus {
+    border: 1.5px solid var(--primario);
+}
+
+#contrato option {
+    background-color: var(--bg); /* Cambia el color del cuadro de opciones */
+}
+
+#genero option {
+    background-color: var(--bg);
+}
+
+#estado option {
+    background-color: var(--bg);
+}
+
+#country option {
+    background-color: var(--bg);
+}
+
+
+/*CSS del botón*/
+.buttons {
+    display: flex; /* Activa el modelo de flexbox */
+    gap: 10px; /* Espaciado entre los botones */
+    justify-content: center; /* Opcional: centra horizontalmente */
+    align-items: center; /* Opcional: alinea verticalmente */
+}
+.my-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    gap: 1rem;
+    background: var(--link-bg);
+    border: 1px solid var(--link-borde);
+    width: 100%;
+    max-width: 32rem;
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+    height: fit-content;
+}
+
+.my-form_button {
+    background: linear-gradient(90deg, var(--primario), var(--morado));
+    color: white;
+    white-space: nowrap;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    line-height: 3.125rem;
+    outline: none;
+    font-size: 1.125rem;
+    letter-spacing: .025rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 800;
+    min-height: 3.125rem;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.my-form_button:hover {
+    background: var(--primario);
+}
+
+/* CSS de las acciones */
+.my-form_actions {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--blanco);
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.my-form_actions a {
+    color: var(--blanco);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.my-form_actions a:hover {
+    text-decoration: underline;
+}
+
+.my-form_row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}

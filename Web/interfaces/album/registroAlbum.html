@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Records</title>
+    <link rel="stylesheet" href="rArt.css">
+</head>
+
+<body>
+    <form class="my-form" id="artistasregistro">
+        <div class="login-welcome-row">
+            <a href="#" title="Logo">
+                <img src="../../assets/hoperecords.png" alt="Logo" class="logo">
+            </a>
+            <h1>¡Registro de Albums Hope Records!</h1>
+        </div>
+        <form id="artistasregistro">
+            <div class="text-field">
+                <label for="artistas">Selecciona un artista:</label>
+                <select name="id_artista" id="artistas">
+                    <option value="" disabled selected>Selecciona un artista</option>
+                </select>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="debut" placeholder="Escribe aquí...">
+
+                <label for="salida">Fecha de Salida:</label>
+                <input type="date" id="debut" placeholder="Escribe aquí..." name="salida">
+
+                <label for="tracklist" class="text_registro_artista">TrackList:</label>
+                <textarea id="descripcion" name="tracklist" placeholder="Escribe una descripción"
+                    class="input_registro_artista"></textarea>
+                
+            </div>
+
+
+            <div class="buttons">
+                <button type="submit" form="artistasregistro" class="my-form_button">
+                    Registrar
+                </button>
+                <button type="button" class="my-form_button" onclick="location.href='./indexRUDAlbum.html'">Consultar
+                </button>
+                <button type="button" class="my-form_button" onclick="location.href='../admin/admin.html'">Volver
+                </button>
+            </div>
+
+
+        </form>
+        <!--Llama a la API de REST Countries para obtener la lista de países -->
+        <script src="../album/formulario.js"></script>
+        <script src="../album/editar.js"></script>
+</body>
+
+</html>
