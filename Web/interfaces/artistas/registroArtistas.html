@@ -9,75 +9,75 @@
 </head>
 
 <body>
-    <form class="my-form" id="registroForm">
+    <form class="my-form" id="artistasregistro">
         <div class="login-welcome-row">
             <a href="#" title="Logo">
                 <img src="../../assets/hoperecords.png" alt="Logo" class="logo">
             </a>
             <h1>¡Registro de Artistas Hope Records!</h1>
         </div>
+        <form id="artistasregistro">
+            <div class="text-field">
+                <label for="nombre_banda">Nombre</label>
+                <input type="text" id="nombre_banda" name="nombre_banda" autocomplete="off"
+                    placeholder="Nombre del Artista" required>
 
-        <div class="text-field">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" autocomplete="off" placeholder="Pepe Pérez" required>
+                <label for="date">Fecha del debut</label>
+                <input type="date" name="debut" id="debut" placeholder="Escribe aquí..." name="debut">
 
-            <label for="date">Fecha del debut</label>
-            <input type="date" id="debut" placeholder="Escribe aquí..." name="debut">
+                <label for="contrato">Estado del contrato:</label>
+                <select id="contrato" name="contrato">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Finalizado">Finalizado</option>
+                </select>
 
-            <label for="contrato">Estado del contrato:</label>
-            <select id="contrato" name="contrato">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="Activo">Activo</option>
-                <option value="Finalizado">Finalizado</option>
-            </select>
+                <label for="genero">Género</label>
+                <select id="genero" name="genero">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rap">Rap</option>
+                    <option value="R&B">Urbano</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Electronica">Electrónica</option>
+                    <option value="Funk">Funk</option>
+                    <option value="Country">Country</option>
+                    <option value="Clásica">Clásica</option>
+                </select>
 
-            <label for="genero">Género</label>
-            <select id="genero" name="genero">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="Metal">Metal</option>
-                <option value="Rock">Rock</option>
-                <option value="Pop">Pop</option>
-                <option value="Rap">Rap</option>
-                <option value="R&B">Urbano</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Electronica">Electrónica</option>
-                <option value="Funk">Funk</option>
-                <option value="Country">Country</option>
-                <option value="Clásica">Clásica</option>
-            </select>
+                <label for="estado">Estado de la banda:</label>
+                <select id="estado" name="estado">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Hiatus">Hiatus</option>
+                    <option value="Disueltos">Disuelto</option>
+                </select>
 
-            <label for="estado">Estado de la banda:</label>
-            <select id="estado" name="estado">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="Activo">Activo</option>
-                <option value="Hiatus">Hiatus</option>
-                <option value="Disueltos">Disuelto</option>
-            </select>
+                <label for="pais">Selecciona tu país:</label>
+                <input type="text" id="pais" placeholder="Escribe el país" name="pais" class="input_registro_artista">
 
-            <label for="country">Selecciona tu país:</label>
-            <select id="country" name="country"></select>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" placeholder="Escribe una descripción..."></textarea>
 
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" name="descripcion" placeholder="Escribe una descripción..."></textarea>
-
-        </div>
+            </div>
+        
 
         <div class="buttons">
-            <button type="submit" class="my-form_button">
-                Registrarse
+            <button type="submit" form="artistasregistro" class="my-form_button">
+                Registrar
             </button>
-            <button type="button" class="my-form_button"
-                onclick="location.href='./indexRUDArtistas.html'">Consultar
+            <button type="button" class="my-form_button" onclick="location.href='./indexRUDArtistas.html'">Consultar
             </button>
-            <button type="button" class="my-form_button"
-                onclick="location.href='../admin/admin.html'">Volver
+            <button type="button" class="my-form_button" onclick="location.href='../admin/admin.html'">Volver
             </button>
         </div>
 
 
     </form>
     <!--Llama a la API de REST Countries para obtener la lista de países -->
-    <script src="../registro/registro.js"></script>
+    <script src="../artistas/formulario.js"></script>
 </body>
 
 </html>
