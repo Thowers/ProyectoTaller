@@ -51,24 +51,22 @@ app.post('/login', (req, res) => {
       return res.status(500).json({ error: 'Error al consultar el usuario' });
     }
 
-    // Depuración: mostrar los resultados completos de la consulta
-    console.log('Resultados de la consulta:', results);
+    console.log('Resultados de la consulta:', results); // Agregar esta línea para ver los resultados
 
-    // Si no se encuentra el usuario, se responde con un error
     if (results.length === 0) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
-    // La contraseña almacenada está en `results[0].contra`
     const storedPassword = results[0].CONTRA;
     console.log('Contraseña almacenada:', storedPassword);
 
-    // Comparar la contraseña ingresada con la almacenada
     if (password === storedPassword) {
-      // Contraseña correcta
-      res.status(200).json({ success: true, message: 'Inicio de sesión exitoso' });
+      // Asegúrate de que se está devolviendo el tipo correctamente
+      const tipo = results[0].TIPO;
+      console.log('Tipo de usuario:', tipo); // Agregar esta línea para verificar si el tipo está bien
+
+      res.status(200).json({ success: true, message: 'Inicio de sesión exitoso', tipo });
     } else {
-      // Contraseña incorrecta
       res.status(401).json({ success: false, message: 'Contraseña incorrecta' });
     }
   });
