@@ -53,7 +53,7 @@ function cargarAlbums() {
 
       // Limpia el selector de álbumes antes de cargar
       const select = document.getElementById('merch');
-      select.innerHTML = '<option value="" disabled selected>Selecciona un álbum</option>';
+      select.innerHTML = '<option value="" disabled selected>Selecciona un merch</option>';
 
       // Añade las opciones de álbumes
       albums.forEach(album => {
@@ -87,9 +87,10 @@ function cargarDetallesAlbum() {
     .then(album => {
       console.log('Detalles del álbum recibidos:', album);
 
-      // Asignar los valores a los campos del formulario  // Nombre del álbum
-      document.getElementById('color').value = album.COLOR || '';  // Fecha de salida
-      document.getElementById('valor').value = album.VALOR || '';  // Tracklist
+      // Asignar los valores a los campos del formulario  
+      document.getElementById('color').value = album.COLOR || '';  
+      document.getElementById('valor').value = album.VALOR || '';
+      document.getElementById('cantidad').value = album.CANTIDAD || '';  
 
       // Mostrar el contenedor de detalles
       document.getElementById('detalles-artista').style.display = 'block';
@@ -108,9 +109,10 @@ function editarAlbum() {
   const albumId = document.getElementById('merch').value; 
   const datos = {       // Nombre del álbum
     color: document.getElementById('color').value,        // Fecha de salida
-    valor: document.getElementById('valor').value   // Tracklist del álbum
+    valor: document.getElementById('valor').value,
+    cantidad: document.getElementById('cantidad').value   // Tracklist del álbum
   };
-  // Hacer la solicitud PUT para actualizar el álbum
+  // Hacer la solicitud PUT para actualizar el merch
   fetch(`${apiUrl}/merch/${albumId}`, {
     method: 'PUT',
     headers: {

@@ -239,14 +239,14 @@ app.delete('/albums/:albumId', (req, res) => {
 app.post('/data_merch', (req, res) => {
   console.log('Datos recibidos en el servidor:', req.body);
 
-  const { id_artista, tipo, color, valor } = req.body;
+  const { id_artista, tipo, color, valor, cantidad } = req.body;
 
-  if (!id_artista || !tipo || !color || !valor) {
+  if (!id_artista || !tipo || !color || !valor || !cantidad) {
       return res.status(400).json({ error: 'Todos los campos son obligatorios' });
   }
 
-  const query = 'INSERT INTO merch (id_artista, tipo, color, valor) VALUES (?, ?, ?, ?)';
-  db.query(query, [id_artista, tipo, color, valor], (err, results) => {
+  const query = 'INSERT INTO merch (id_artista, tipo, color, valor, cantidad) VALUES (?, ?, ?, ?, ?)';
+  db.query(query, [id_artista, tipo, color, valor, cantidad], (err, results) => {
       if (err) {
           console.error('Error en la consulta:', err.message);
           res.status(500).json({ error: 'Error al guardar los datos' });
@@ -295,10 +295,10 @@ app.get('/merch/:id', (req, res) => {
 //editar detalles merch
 app.put('/merch/:albumId', (req, res) => {
   const albumId = req.params.albumId;
-  const { color, valor } = req.body;
-  const query = `UPDATE merch SET color = ?, valor = ? WHERE id_merch = ?`;
+  const { color, valor, cantidad } = req.body;
+  const query = `UPDATE merch SET color = ?, valor = ?, cantidad = ? WHERE id_merch = ?`;
 
-  db.query(query, [color, valor, albumId], (err, results) => {
+  db.query(query, [color, valor, cantidad, albumId], (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Error al actualizar el merch');
