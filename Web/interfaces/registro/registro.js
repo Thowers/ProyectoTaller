@@ -12,7 +12,8 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
         usuario,
         pais,
         email,
-        contra
+        contra,
+        tipo: 'usuario'
     };
 
     // Enviar los datos al servidor
@@ -27,7 +28,7 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
         .then(data => {
             console.log('Datos guardados correctamente:', data);
             alert('Registro exitoso');
-            window.location.href = "http://127.0.0.1:5500/ProyectoTaller/Web/interfaces/login/login.html";
+            window.location.href = "http://127.0.0.1:5500/index.html";
         })
         .catch((error) => {
             console.error('Error al registrar usuario:', error);

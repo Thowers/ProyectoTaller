@@ -24,16 +24,18 @@ db.connect((err) => {
 
 // Código para manejar el envío de datos del registro
 app.post('/registro', (req, res) => {
-  const { nombre, pais, usuario, contra, email } = req.body;
+  const { nombre, pais, usuario, contra, email, tipo } = req.body;
 
-  // Insertar usuario con la contraseña sin encriptar
-  const query = 'INSERT INTO usuario (nombre, pais, usuario, contra, email) VALUES (?, ?, ?, ?, ?)';
-  db.query(query, [nombre, pais, usuario, contra, email], (err, results) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).json({ error: 'Error al guardar los datos del usuario' });
-    }
-    res.status(200).json({ message: 'Usuario registrado exitosamente' });
+  // Consulta SQL ajustada
+  const query = `INSERT INTO usuario (nombre, pais, usuario, contra, email, tipo) VALUES (?, ?, ?, ?, ?, ?)`;
+
+  db.query(query, [nombre, pais, usuario, contra, email, tipo], (err, results) => {
+      if (err) {
+          console.error('Error al registrar usuario:', err);
+          res.status(500).json({ error: 'Error al registrar usuario' });
+          return;
+      }
+      res.status(201).json({ message: 'Usuario registrado correctamente', id: results.insertId });
   });
 });
 
