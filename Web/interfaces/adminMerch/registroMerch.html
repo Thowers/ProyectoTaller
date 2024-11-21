@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Records</title>
+    <link rel="stylesheet" href="rArt.css">
+</head>
+
+<body>
+    <form class="my-form" id="artistasregistro">
+        <div class="login-welcome-row">
+            <a href="#" title="Logo">
+                <img src="../../assets/hoperecords.png" alt="Logo" class="logo">
+            </a>
+            <h1>¡Registro de Merch Hope Records!</h1>
+        </div>
+        <form id="artistasregistro">
+            <div class="text-field">
+                <label for="artistas">Selecciona un artista:</label>
+                <select name="id_artista" id="artistas">
+                    <option value="" disabled selected>Selecciona un artista</option>
+                </select>
+
+                <label for="tipo">Tipo</label>
+                <select id="tipo" name="tipo">
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Camiseta">Camiseta</option>
+                    <option value="Gorra">Gorra</option>
+                    <option value="Tazas">Tazas</option>
+                    <option value="Posters">Posters</option>
+                    <option value="Accesorios">Accesorios</option>
+                </select>
+
+                <label for="nombre">Color</label>
+                <input type="text" name="color" id="color" placeholder="Escribe aquí...">
+
+                <label for="nombre">Valor</label>
+                <input type="number" name="valor" id="valor" placeholder="Escribe aquí...">
+                
+            </div>
+
+
+            <div class="buttons">
+                <button type="submit" form="artistasregistro" class="my-form_button">
+                    Registrar
+                </button>
+                <button type="button" class="my-form_button" onclick="location.href='./indexRUDMerch.html'">Consultar
+                </button>
+                <button type="button" class="my-form_button" onclick="location.href='../admin/admin.html'">Volver
+                </button>
+            </div>
+
+
+        </form>
+        <!--Llama a la API de REST Countries para obtener la lista de países -->
+        <script src="../adminMerch/formulario.js"></script>
+        <script src="../adminMerch/editar.js"></script>
+</body>
+
+</html>

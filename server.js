@@ -235,6 +235,99 @@ app.delete('/albums/:albumId', (req, res) => {
   });
 });
 
+// Codigo para manejar el envío de merch
+app.post('/data_merch', (req, res) => {
+  console.log('Datos recibidos en el servidor:', req.body);
+
+  const { id_artista, tipo, color, valor } = req.body;
+
+  if (!id_artista || !tipo || !color || !valor) {
+      return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+  }
+
+  const query = 'INSERT INTO merch (id_artista, tipo, color, valor) VALUES (?, ?, ?, ?)';
+  db.query(query, [id_artista, tipo, color, valor], (err, results) => {
+      if (err) {
+          console.error('Error en la consulta:', err.message);
+          res.status(500).json({ error: 'Error al guardar los datos' });
+      } else {
+          res.status(200).json({ message: 'Datos guardados correctamente' });
+      }
+  });
+});
+
+// Obtener merch de merch
+app.get('/artistas/:id/merch', (req, res) => {
+  const artistId = req.params.id;
+  console.log('Solicitando merch para el artista con ID:', artistId);  // Verifica que el ID sea correcto
+
+  const query = 'SELECT id_merch, tipo FROM merch WHERE id_artista = ?';  // Usamos el nombre correcto del campo
+
+  db.query(query, [artistId], (err, results) => {
+    if (err) {
+      console.error('Error al obtener los álbumes:', err);
+      res.status(500).json({ error: 'Error al obtener los álbumes' });
+    } else {
+      console.log('Merch obtenida desde la base de datos:', results);  // Verifica que los datos estén llegando bien
+      res.status(200).json(results);  // Devuelve los álbumes encontrados
+    }
+  });
+});
+
+// Obtener detalles de merch
+app.get('/merch/:id', (req, res) => {
+  const albumId = req.params.id;
+  console.log('ID del álbum:', albumId);  // Verifica el ID que estás recibiendo
+
+  const query = 'SELECT * FROM merch WHERE id_merch = ?';
+  
+  db.query(query, [albumId], (err, results) => {
+    if (err) {
+      console.error('Error en la consulta:', err);  // Más detalles sobre el error
+      res.status(500).json({ error: 'Error al obtener los detalles del merch' });
+    } else {
+      console.log('Detalles del merch:', results);  // Verifica los resultados de la consulta
+      res.status(200).json(results[0]);
+    }
+  });
+});
+
+//editar detalles merch
+app.put('/merch/:albumId', (req, res) => {
+  const albumId = req.params.albumId;
+  const { color, valor } = req.body;
+  const query = `UPDATE merch SET color = ?, valor = ? WHERE id_merch = ?`;
+
+  db.query(query, [color, valor, albumId], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error al actualizar el merch');
+    }
+    res.json({ message: 'merch actualizado correctamente' });
+  });
+});
+
+// Codigo para eliminar merch
+app.delete('/merch/:albumId', (req, res) => {
+  const albumId = req.params.albumId;
+  console.log('ID del merch a eliminar:', albumId);
+
+  const query = 'DELETE FROM merch WHERE id_merch = ?';
+
+  db.query(query, [albumId], (error, results) => {
+    if (error) {
+      console.error('Error en la consulta SQL:', error);
+      res.status(500).json({ message: 'Error interno del servidor' });
+    } else if (results.affectedRows === 0) {
+      console.log('Álbum no encontrado:', albumId);
+      res.status(404).json({ message: 'Merch no encontrada' });
+    } else {
+      console.log('Álbum eliminado:', albumId);
+      res.json({ message: 'Merch eliminada correctamente' });
+    }
+  });
+});
+
 // Inicia el servidor
 app.listen(3000, () => {
   console.log('Servidor escuchando en el puerto 3000');
