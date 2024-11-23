@@ -130,7 +130,7 @@
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-                <p>Cariñito</p>
+                <p>Cari</p>
             </div>
         </div>
     </section>
@@ -145,8 +145,17 @@
             <button class="close-btn" onclick="toggleChat()">✖</button>
         </div>
         <div class="chat-content">
-            <p>¡Hola! ¿En qué podemos ayudarte?</p>
-            <!-- Aquí podrías integrar un formulario o API de chat -->
+            <form action="">
+                <input id="newUserField" name="user" value="" type="text"> 
+                <input id="newUserButton" onclick="join();" value="Entrar" type="button">
+                
+                <br/><br/>
+                <textarea id="chatRoomField" rows="10" cols="30" readonly disabled></textarea>
+                
+                <br/>
+                <input id="sendField" name="message" value="" type="text" disabled>
+                <input id="sendButton" onclick="send_message();" value="Enviar" type="button" disabled>
+            </form>
         </div>
         <div class="chat-footer">
             <input type="text" placeholder="Escribe tu mensaje...">
@@ -161,6 +170,8 @@
 
     <!-- Script para funciones adicionales -->
     <script src="main.js"></script>
+    <script type="text/javascript" src="websocket.js">
+	</script>
 </body>
 
 </html>

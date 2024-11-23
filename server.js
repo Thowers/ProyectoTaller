@@ -332,3 +332,36 @@ app.delete('/merch/:albumId', (req, res) => {
 app.listen(3000, () => {
   console.log('Servidor escuchando en el puerto 3000');
 });
+
+
+const WebSocket = require('ws');
+
+// Crear el servidor WebSocket en el puerto 8080
+const wss = new WebSocket.Server({ port: 8080 });
+
+// Manejar eventos de conexión
+wss.on('connection', (ws) => {
+    console.log('Cliente conectado');
+
+    // Enviar un mensaje inicial al cliente
+    ws.send('Bienvenido al servidor WebSocket');
+
+    // Escuchar mensajes del cliente
+    ws.on('message', (message) => {
+        console.log(`Mensaje recibido: ${message}`);
+
+        // Reenviar el mensaje a todos los clientes conectados
+        wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            }
+        });
+    });
+
+    // Manejar desconexiones
+    ws.on('close', () => {
+        console.log('Cliente desconectado');
+    });
+});
+
+console.log('Servidor WebSocket en ejecución en ws://localhost:8080');
